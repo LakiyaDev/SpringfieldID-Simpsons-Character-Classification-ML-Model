@@ -119,7 +119,7 @@ export function AnalysisPanel({
             <UsersIcon />
           </div>
           <div className="min-w-0">
-            <p className="text-sm font-bold text-[var(--text-primary)] sm:text-lg">21+</p>
+            <p className="text-sm font-bold text-[var(--text-primary)] sm:text-lg">20+</p>
             <p className="text-[0.5625rem] font-medium uppercase tracking-wider text-[var(--text-muted)] sm:text-[10px]">
               Characters
             </p>
