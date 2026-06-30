@@ -4,12 +4,22 @@ import { SiteFooter } from "@/components/SiteFooter";
 
 interface InfoPageLayoutProps {
   title: string;
-  wide?: boolean;
+  /** Shared width for About, Help, and Contact pages */
+  contentSize?: "default" | "content";
   children: React.ReactNode;
 }
 
-export function InfoPageLayout({ title, wide, children }: InfoPageLayoutProps) {
-  const maxWidth = wide ? "max-w-5xl" : "max-w-3xl";
+const widthClasses = {
+  default: "max-w-3xl",
+  content: "max-w-5xl",
+} as const;
+
+export function InfoPageLayout({
+  title,
+  contentSize = "default",
+  children,
+}: InfoPageLayoutProps) {
+  const maxWidth = widthClasses[contentSize];
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -17,9 +27,9 @@ export function InfoPageLayout({ title, wide, children }: InfoPageLayoutProps) {
       <Header />
 
       <main className={`mx-auto w-full ${maxWidth} flex-1 px-4 py-8 sm:px-6 lg:px-8`}>
-        <article className="glass-panel rounded-3xl p-8 md:p-10">
+        <article className="glass-panel info-page-panel rounded-3xl p-8 md:p-10">
           <h1 className="font-serif text-3xl font-bold text-[var(--text-primary)]">{title}</h1>
-          <div className="prose-info mt-6 space-y-4 text-sm leading-relaxed text-[var(--text-muted)]">
+          <div className="prose-info mt-6 space-y-6 text-sm leading-relaxed text-[var(--text-muted)]">
             {children}
           </div>
         </article>

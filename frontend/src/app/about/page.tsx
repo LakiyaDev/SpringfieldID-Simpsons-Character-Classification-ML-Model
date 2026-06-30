@@ -47,8 +47,8 @@ const TECH_STACK = [
 
 export default function AboutPage() {
   return (
-    <InfoPageLayout title="About Springfield ID" wide>
-      <p className="text-base leading-relaxed text-[var(--text-primary)]">
+    <InfoPageLayout title="About Springfield ID" contentSize="content">
+      <p>
         <strong>Springfield ID</strong> is an AI-powered web application that identifies characters
         from <em>The Simpsons</em> using a custom machine learning model trained on Azure. Upload a
         photo and the app predicts which Springfield resident appears in the image — complete with
@@ -56,7 +56,7 @@ export default function AboutPage() {
       </p>
 
       <section>
-        <h2 className="mb-3 text-lg font-semibold text-[var(--text-primary)]">What this project demonstrates</h2>
+        <h2>What this project demonstrates</h2>
         <ul className="list-disc space-y-2 pl-5">
           <li>End-to-end ML deployment: dataset → training → published model → production API</li>
           <li>Cloud AI integration with Microsoft Azure Custom Vision Prediction API</li>
@@ -66,7 +66,7 @@ export default function AboutPage() {
       </section>
 
       <section>
-        <h2 className="mb-4 text-lg font-semibold text-[var(--text-primary)]">Model performance</h2>
+        <h2>Model performance</h2>
         <p className="mb-5">
           The classifier was trained on <strong>2,141 images</strong> across <strong>21 character tags</strong>{" "}
           (~100 images per character). Published as <strong>SimpsonMLIteration2</strong>, the model achieves
@@ -90,7 +90,7 @@ export default function AboutPage() {
       </section>
 
       <section>
-        <h2 className="mb-3 text-lg font-semibold text-[var(--text-primary)]">Performance per character</h2>
+        <h2>Performance per character</h2>
         <p className="mb-4">
           Eight characters achieved <strong>100% precision</strong>, and three reached perfect scores
           across precision, recall, and average precision. Even the lowest-performing tag (Comic Book Guy)
@@ -129,7 +129,7 @@ export default function AboutPage() {
       </section>
 
       <section>
-        <h2 className="mb-3 text-lg font-semibold text-[var(--text-primary)]">How it works</h2>
+        <h2>How it works</h2>
         <ol className="list-decimal space-y-2 pl-5">
           <li>You upload a Simpsons character image through the web interface.</li>
           <li>The Express backend receives the image and forwards it to Azure Custom Vision.</li>
@@ -140,7 +140,7 @@ export default function AboutPage() {
       </section>
 
       <section>
-        <h2 className="mb-3 text-lg font-semibold text-[var(--text-primary)]">Technology stack</h2>
+        <h2>Technology stack</h2>
         <div className="space-y-2">
           {TECH_STACK.map((item) => (
             <div
@@ -157,7 +157,7 @@ export default function AboutPage() {
       </section>
 
       <section>
-        <h2 className="mb-3 text-lg font-semibold text-[var(--text-primary)]">Dataset &amp; training</h2>
+        <h2>Dataset &amp; training</h2>
         <p>
           The <strong>SimpsonsML</strong> project on Azure Custom Vision uses multiclass image
           classification with the General [A2] domain. Training images were labeled with character

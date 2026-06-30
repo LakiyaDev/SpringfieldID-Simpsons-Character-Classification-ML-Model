@@ -9,14 +9,14 @@ export const metadata = createPageMetadata(
 
 export default function HelpPage() {
   return (
-    <InfoPageLayout title="Help & FAQ">
-      <p className="text-[var(--text-primary)]">
+    <InfoPageLayout title="Help & FAQ" contentSize="content">
+      <p>
         Springfield ID identifies Simpsons characters from uploaded images using Azure Custom Vision
         AI. Here&apos;s how to get the best results.
       </p>
 
       <section>
-        <h2 className="mb-2 text-base font-semibold text-[var(--text-primary)]">How to use</h2>
+        <h2>How to use</h2>
         <ol className="list-decimal space-y-2 pl-5">
           <li>Go to the <Link href="/" className="text-springfield-blue hover:underline">Classifier</Link> page.</li>
           <li>Drag and drop a photo into the upload area, or click <strong>Select from Computer</strong>.</li>
@@ -27,7 +27,7 @@ export default function HelpPage() {
       </section>
 
       <section>
-        <h2 className="mb-2 text-base font-semibold text-[var(--text-primary)]">Tips for better accuracy</h2>
+        <h2>Tips for better accuracy</h2>
         <ul className="list-disc space-y-1 pl-5">
           <li>Use a clear image of a <strong>single character</strong> facing the camera.</li>
           <li>Avoid group shots, heavy blur, or non-Simpsons images.</li>
@@ -37,7 +37,7 @@ export default function HelpPage() {
       </section>
 
       <section>
-        <h2 className="mb-2 text-base font-semibold text-[var(--text-primary)]">Supported characters</h2>
+        <h2>Supported characters</h2>
         <p>
           The model recognizes characters it was trained on in Azure Custom Vision (21 tags in the
           SimpsonsML project), including Homer, Marge, Bart, Lisa, Maggie, Ned Flanders, Mr. Burns,
@@ -46,7 +46,7 @@ export default function HelpPage() {
       </section>
 
       <section>
-        <h2 className="mb-2 text-base font-semibold text-[var(--text-primary)]">Troubleshooting</h2>
+        <h2>Troubleshooting</h2>
         <div className="space-y-3">
           <div className="rounded-xl border border-black/5 bg-white/30 p-4 dark:border-white/10 dark:bg-white/5">
             <p className="font-medium text-[var(--text-primary)]">Analysis failed / Invalid Prediction Key</p>
@@ -73,7 +73,7 @@ export default function HelpPage() {
       </section>
 
       <section>
-        <h2 className="mb-2 text-base font-semibold text-[var(--text-primary)]">Dark mode</h2>
+        <h2>Dark mode</h2>
         <p>
           Click the sun/moon button in the top-right corner of the header to switch between light and
           dark themes. Your preference is saved automatically.
@@ -81,7 +81,7 @@ export default function HelpPage() {
       </section>
 
       <section>
-        <h2 className="mb-2 text-base font-semibold text-[var(--text-primary)]">More information</h2>
+        <h2>More information</h2>
         <p>
           See our <Link href="/about" className="text-springfield-blue hover:underline">About</Link> page,{" "}
           <Link href="/privacy" className="text-springfield-blue hover:underline">Privacy Policy</Link>{" "}

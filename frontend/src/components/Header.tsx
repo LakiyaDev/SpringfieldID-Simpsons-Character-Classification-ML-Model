@@ -24,13 +24,14 @@ export function Header({ homeTab = "classifier", onHomeTabChange }: HeaderProps)
   const historyActive = isHome && homeTab === "history";
   const aboutActive = pathname === "/about";
   const helpActive = pathname === "/help";
+  const contactActive = pathname === "/contact";
 
   return (
     <header className="glass-header sticky top-0 z-40">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Logo size="lg" />
 
-        <nav className="absolute left-1/2 flex -translate-x-1/2 gap-8">
+        <nav className="absolute left-1/2 flex -translate-x-1/2 flex-wrap justify-center gap-x-5 gap-y-1 md:gap-x-6">
           {isHome && onHomeTabChange ? (
             <button
               type="button"
@@ -65,6 +66,10 @@ export function Header({ homeTab = "classifier", onHomeTabChange }: HeaderProps)
 
           <Link href="/help" className={navClass(helpActive)}>
             Help
+          </Link>
+
+          <Link href="/contact" className={navClass(contactActive)}>
+            Contact
           </Link>
         </nav>
 
