@@ -73,17 +73,19 @@ export default function AboutPage() {
           strong results on Azure&apos;s evaluation metrics:
         </p>
 
-        <div className="mb-6 grid gap-4 sm:grid-cols-3">
+        <div className="mb-4 grid gap-3 sm:mb-6 sm:grid-cols-3 sm:gap-4">
           {MODEL_METRICS.map((metric) => (
-            <div key={metric.label} className="stat-card rounded-2xl p-5 text-center">
+            <div key={metric.label} className="stat-card rounded-xl p-3 text-center sm:rounded-2xl sm:p-5">
               <div
-                className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full text-lg font-bold text-white"
+                className="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full text-sm font-bold text-white sm:mb-3 sm:h-16 sm:w-16 sm:text-lg"
                 style={{ backgroundColor: metric.color }}
               >
                 {metric.value}
               </div>
-              <p className="font-semibold text-[var(--text-primary)]">{metric.label}</p>
-              <p className="mt-1 text-xs text-[var(--text-muted)]">{metric.description}</p>
+              <p className="text-xs font-semibold text-[var(--text-primary)] sm:text-sm">{metric.label}</p>
+              <p className="mt-0.5 text-[0.625rem] text-[var(--text-muted)] sm:mt-1 sm:text-xs">
+                {metric.description}
+              </p>
             </div>
           ))}
         </div>
@@ -97,15 +99,18 @@ export default function AboutPage() {
           maintains <strong>90.3% AP</strong>.
         </p>
 
-        <div className="overflow-x-auto rounded-2xl border border-black/5 dark:border-white/10">
-          <table className="w-full min-w-[540px] text-left text-xs sm:text-sm">
+        <p className="mb-3 text-[0.6875rem] text-[var(--text-muted)] sm:mb-4 sm:text-xs">
+          Swipe horizontally to view all columns.
+        </p>
+        <div className="table-scroll -mx-1 overflow-x-auto rounded-xl border border-black/5 px-1 sm:mx-0 sm:rounded-2xl dark:border-white/10">
+          <table className="w-full min-w-[28rem] text-left text-[0.6875rem] sm:min-w-[540px] sm:text-sm">
             <thead>
               <tr className="border-b border-black/5 bg-white/40 dark:border-white/10 dark:bg-white/5">
-                <th className="px-4 py-3 font-semibold text-[var(--text-primary)]">Character</th>
-                <th className="px-4 py-3 font-semibold text-[var(--text-primary)]">Precision</th>
-                <th className="px-4 py-3 font-semibold text-[var(--text-primary)]">Recall</th>
-                <th className="px-4 py-3 font-semibold text-[var(--text-primary)]">A.P.</th>
-                <th className="px-4 py-3 font-semibold text-[var(--text-primary)]">Images</th>
+                <th className="px-2 py-2 font-semibold text-[var(--text-primary)] sm:px-4 sm:py-3">Character</th>
+                <th className="px-2 py-2 font-semibold text-[var(--text-primary)] sm:px-4 sm:py-3">Precision</th>
+                <th className="px-2 py-2 font-semibold text-[var(--text-primary)] sm:px-4 sm:py-3">Recall</th>
+                <th className="px-2 py-2 font-semibold text-[var(--text-primary)] sm:px-4 sm:py-3">A.P.</th>
+                <th className="px-2 py-2 font-semibold text-[var(--text-primary)] sm:px-4 sm:py-3">Images</th>
               </tr>
             </thead>
             <tbody>
@@ -114,13 +119,13 @@ export default function AboutPage() {
                   key={row.tag}
                   className="border-b border-black/5 last:border-0 dark:border-white/5"
                 >
-                  <td className="px-4 py-2.5 text-[var(--text-primary)]">{row.tag}</td>
-                  <td className="px-4 py-2.5 font-mono text-springfield-blue">{row.precision}%</td>
-                  <td className="px-4 py-2.5 font-mono text-springfield-blue">{row.recall}%</td>
-                  <td className="px-4 py-2.5 font-mono font-medium text-springfield-brown">
+                  <td className="px-2 py-2 text-[var(--text-primary)] sm:px-4 sm:py-2.5">{row.tag}</td>
+                  <td className="px-2 py-2 font-mono text-springfield-blue sm:px-4 sm:py-2.5">{row.precision}%</td>
+                  <td className="px-2 py-2 font-mono text-springfield-blue sm:px-4 sm:py-2.5">{row.recall}%</td>
+                  <td className="px-2 py-2 font-mono font-medium text-springfield-brown sm:px-4 sm:py-2.5">
                     {row.ap}%
                   </td>
-                  <td className="px-4 py-2.5 text-[var(--text-muted)]">{row.images}</td>
+                  <td className="px-2 py-2 text-[var(--text-muted)] sm:px-4 sm:py-2.5">{row.images}</td>
                 </tr>
               ))}
             </tbody>
@@ -145,12 +150,12 @@ export default function AboutPage() {
           {TECH_STACK.map((item) => (
             <div
               key={item.layer}
-              className="flex flex-col gap-1 rounded-xl border border-black/5 bg-white/30 px-4 py-3 sm:flex-row sm:items-center sm:gap-4 dark:border-white/10 dark:bg-white/5"
+              className="flex flex-col gap-0.5 rounded-lg border border-black/5 bg-white/30 px-3 py-2.5 sm:flex-row sm:items-center sm:gap-4 sm:rounded-xl sm:px-4 sm:py-3 dark:border-white/10 dark:bg-white/5"
             >
-              <span className="w-24 shrink-0 text-sm font-semibold text-springfield-brown">
+              <span className="w-24 shrink-0 text-xs font-semibold text-springfield-brown sm:text-sm">
                 {item.layer}
               </span>
-              <span className="text-sm text-[var(--text-muted)]">{item.tools}</span>
+              <span className="text-xs text-[var(--text-muted)] sm:text-sm">{item.tools}</span>
             </div>
           ))}
         </div>
@@ -164,6 +169,19 @@ export default function AboutPage() {
           names matching the show&apos;s cast — from the Simpson family to recurring Springfield
           residents like Apu, Moe, Chief Wiggum, and Comic Book Guy. The balanced dataset (~100
           images per tag) helps prevent bias toward any single character.
+        </p>
+        <p className="mt-3">
+          Training data is based on{" "}
+          <a
+            href="https://www.kaggle.com/datasets/alexattia/the-simpsons-characters-dataset"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-springfield-blue hover:underline"
+          >
+            The Simpsons Characters Dataset on Kaggle
+          </a>{" "}
+          by Alex Attia — a labeled collection of character images used to train and evaluate the
+          classifier.
         </p>
       </section>
 

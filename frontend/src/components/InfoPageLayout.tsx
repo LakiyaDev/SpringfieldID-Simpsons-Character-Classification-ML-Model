@@ -4,7 +4,6 @@ import { SiteFooter } from "@/components/SiteFooter";
 
 interface InfoPageLayoutProps {
   title: string;
-  /** Shared width for About, Help, and Contact pages */
   contentSize?: "default" | "content";
   children: React.ReactNode;
 }
@@ -26,12 +25,10 @@ export function InfoPageLayout({
       <AnimatedBackground />
       <Header />
 
-      <main className={`mx-auto w-full ${maxWidth} flex-1 px-4 py-8 sm:px-6 lg:px-8`}>
-        <article className="glass-panel info-page-panel rounded-3xl p-8 md:p-10">
-          <h1 className="font-serif text-3xl font-bold text-[var(--text-primary)]">{title}</h1>
-          <div className="prose-info mt-6 space-y-6 text-sm leading-relaxed text-[var(--text-muted)]">
-            {children}
-          </div>
+      <main className={`page-main mx-auto w-full ${maxWidth} flex-1 lg:px-8`}>
+        <article className="page-card glass-panel info-page-panel">
+          <h1 className="page-title">{title}</h1>
+          <div className="prose-info mt-4 space-y-3 sm:mt-5 sm:space-y-4">{children}</div>
         </article>
       </main>
 

@@ -48,7 +48,7 @@ export default function HelpPage() {
       <section>
         <h2>Troubleshooting</h2>
         <div className="space-y-3">
-          <div className="rounded-xl border border-black/5 bg-white/30 p-4 dark:border-white/10 dark:bg-white/5">
+          <div className="rounded-lg border border-black/5 bg-white/30 p-3 dark:border-white/10 dark:bg-white/5 sm:rounded-xl sm:p-4">
             <p className="font-medium text-[var(--text-primary)]">Analysis failed / Invalid Prediction Key</p>
             <p className="mt-1">
               Ensure <code className="rounded bg-black/5 px-1 dark:bg-white/10">backend/.env</code> uses
@@ -56,14 +56,14 @@ export default function HelpPage() {
               the backend with <code className="rounded bg-black/5 px-1 dark:bg-white/10">npm run dev</code>.
             </p>
           </div>
-          <div className="rounded-xl border border-black/5 bg-white/30 p-4 dark:border-white/10 dark:bg-white/5">
+          <div className="rounded-lg border border-black/5 bg-white/30 p-3 dark:border-white/10 dark:bg-white/5 sm:rounded-xl sm:p-4">
             <p className="font-medium text-[var(--text-primary)]">Azure is not configured banner</p>
             <p className="mt-1">
               The backend API is not running or environment variables are missing. Start both frontend
               and backend from the project root.
             </p>
           </div>
-          <div className="rounded-xl border border-black/5 bg-white/30 p-4 dark:border-white/10 dark:bg-white/5">
+          <div className="rounded-lg border border-black/5 bg-white/30 p-3 dark:border-white/10 dark:bg-white/5 sm:rounded-xl sm:p-4">
             <p className="font-medium text-[var(--text-primary)]">Low confidence scores</p>
             <p className="mt-1">
               Try a different angle, crop to one character, or use an image similar to your training data.

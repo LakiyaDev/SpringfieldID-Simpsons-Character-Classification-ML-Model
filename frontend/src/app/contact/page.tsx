@@ -13,7 +13,10 @@ const socialItems = [
   { platform: "github" as const, ...contactLinks.github },
   { platform: "linkedin" as const, ...contactLinks.linkedin },
   { platform: "instagram" as const, ...contactLinks.instagram },
-];
+] as const;
+
+const contactCardClass =
+  "group block w-full rounded-lg border border-black/5 bg-white/30 px-3 py-2.5 transition hover:border-springfield-blue/30 hover:bg-white/50 sm:rounded-xl sm:px-3.5 sm:py-3 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10";
 
 export default function ContactPage() {
   return (
@@ -26,11 +29,16 @@ export default function ContactPage() {
 
       <section>
         <h2>Email</h2>
-        <a
-          href={`mailto:${contactLinks.email}`}
-          className="inline-flex items-center gap-2 rounded-xl border border-black/5 bg-white/30 px-4 py-3 text-sm font-medium text-springfield-blue transition hover:bg-white/50 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
-        >
-          {contactLinks.email}
+        <a href={`mailto:${contactLinks.email}`} className={contactCardClass}>
+          <div className="flex items-center gap-2">
+            <MailIcon />
+            <div className="min-w-0 flex-1">
+              <p className="text-xs font-medium text-[var(--text-primary)] sm:text-sm">Email</p>
+              <p className="truncate text-[0.6875rem] text-springfield-blue group-hover:underline sm:text-xs">
+                {contactLinks.email}
+              </p>
+            </div>
+          </div>
         </a>
       </section>
 
@@ -40,32 +48,37 @@ export default function ContactPage() {
           href={contactLinks.repository.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="group block rounded-2xl border border-black/5 bg-white/30 p-5 transition hover:border-springfield-blue/30 hover:bg-white/50 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
+          className={contactCardClass}
         >
-          <div className="mb-2 flex items-center gap-2 text-[var(--text-primary)]">
-            <SocialIcon platform="github" className="h-5 w-5" />
-            <span className="font-medium">{contactLinks.repository.label}</span>
+          <div className="flex items-center gap-2">
+            <SocialIcon platform="github" className="h-4 w-4 shrink-0 sm:h-5 sm:w-5" />
+            <div className="min-w-0 flex-1">
+              <p className="text-xs font-medium text-[var(--text-primary)] sm:text-sm">
+                {contactLinks.repository.label}
+              </p>
+              <p className="truncate text-[0.6875rem] text-springfield-blue group-hover:underline sm:text-xs">
+                {contactLinks.repository.url.replace("https://", "")}
+              </p>
+            </div>
           </div>
-          <p className="text-sm">{contactLinks.repository.description}</p>
-          <p className="mt-2 truncate text-xs text-springfield-blue group-hover:underline">
-            {contactLinks.repository.url.replace("https://", "")}
-          </p>
         </a>
       </section>
 
       <section>
         <h2>Social media</h2>
-        <div className="flex flex-wrap gap-3">
+        <div className="grid grid-cols-3 gap-2 sm:gap-3">
           {socialItems.map((item) => (
             <a
               key={item.platform}
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-xl border border-black/5 bg-white/30 px-4 py-2.5 text-sm font-medium text-[var(--text-primary)] transition hover:border-springfield-blue/30 hover:bg-white/50 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
+              className={`${contactCardClass} flex items-center justify-center gap-1.5 px-2 py-2 text-center sm:gap-2 sm:py-2.5`}
             >
-              <SocialIcon platform={item.platform} />
-              {item.label}
+              <SocialIcon platform={item.platform} className="h-4 w-4 shrink-0 sm:h-5 sm:w-5" />
+              <span className="text-[0.625rem] font-medium leading-none text-[var(--text-primary)] sm:text-xs">
+                {item.label}
+              </span>
             </a>
           ))}
         </div>
@@ -80,5 +93,21 @@ export default function ContactPage() {
         </p>
       </section>
     </InfoPageLayout>
+  );
+}
+
+function MailIcon() {
+  return (
+    <svg
+      className="h-4 w-4 shrink-0 text-springfield-blue sm:h-5 sm:w-5"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      aria-hidden
+    >
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="M3 7l9 6 9-6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   );
 }
