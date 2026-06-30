@@ -24,18 +24,6 @@
 
 ---
 
-## Links
-
-| | |
-|---|---|
-| Live app | <https://icy-moss-06fa2b400.7.azurestaticapps.net/> |
-| Source code | <https://github.com/LakiyaDev/SpringfieldID-Simpsons-Character-Classification-ML-Model> |
-
-
----
-
-
-
 ## Table of Contents
 
 - [Overview](#overview)
@@ -81,10 +69,6 @@ Published iteration metrics from Azure Custom Vision (**SimpsonMLIteration2**):
 
 <p align="center">
   <img src="docs/images/model-metrics.png" alt="Azure Custom Vision model metrics — Precision 95.1%, Recall 88.3%, AP 97.1%" width="720" />
-</p>
-
-<p align="center">
-  <img src="docs/images/model-performance.png" alt="Azure Custom Vision performance dashboard — Precision, Recall, and AP donut charts" width="720" />
 </p>
 
 | Metric | Score | Meaning |
