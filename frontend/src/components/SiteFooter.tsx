@@ -19,6 +19,9 @@ export function SiteFooter() {
           <Link href="/help" className="transition hover:text-springfield-brown">
             Help
           </Link>
+          <Link href="/contact" className="transition hover:text-springfield-brown">
+            Contact
+          </Link>
         </nav>
         <span className="text-[var(--text-muted)]/80">© 2026 Springfield ID. Unauthorized use is prohibited.</span>
       </div>
