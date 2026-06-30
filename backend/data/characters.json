@@ -1,0 +1,82 @@
+{
+  "Homer Simpson": {
+    "displayName": "Homer Simpson",
+    "occupation": "Nuclear Safety Inspector",
+    "family": ["Marge", "Bart", "Lisa", "Maggie"],
+    "personality": ["Funny", "Lazy", "Loving Father"],
+    "episodes": "765+",
+    "quote": "D'oh!",
+    "description": "Homer Jay Simpson is the bumbling patriarch of the Simpson family and Springfield's most famous donut enthusiast.",
+    "color": "#FFD90F"
+  },
+  "Marge Simpson": {
+    "displayName": "Marge Simpson",
+    "occupation": "Homemaker",
+    "family": ["Homer", "Bart", "Lisa", "Maggie"],
+    "personality": ["Patient", "Caring", "Moral Compass"],
+    "episodes": "765+",
+    "quote": "Hmm...",
+    "description": "Marge Bouvier Simpson is the devoted wife and mother who keeps the Simpson household together with her iconic blue beehive.",
+    "color": "#4ECDC4"
+  },
+  "Bart Simpson": {
+    "displayName": "Bart Simpson",
+    "occupation": "Fourth Grade Student",
+    "family": ["Homer", "Marge", "Lisa", "Maggie"],
+    "personality": ["Mischievous", "Rebellious", "Clever"],
+    "episodes": "765+",
+    "quote": "Eat my shorts!",
+    "description": "Bartholomew JoJo Simpson is Springfield Elementary's most notorious prankster and skateboard legend.",
+    "color": "#FF6B35"
+  },
+  "Lisa Simpson": {
+    "displayName": "Lisa Simpson",
+    "occupation": "Second Grade Student",
+    "family": ["Homer", "Marge", "Bart", "Maggie"],
+    "personality": ["Intelligent", "Principled", "Saxophonist"],
+    "episodes": "765+",
+    "quote": "If anyone wants me, I'll be in my room.",
+    "description": "Lisa Marie Simpson is the brilliant, saxophone-playing middle child and voice of reason in the Simpson family.",
+    "color": "#FFE66D"
+  },
+  "Maggie Simpson": {
+    "displayName": "Maggie Simpson",
+    "occupation": "Baby",
+    "family": ["Homer", "Marge", "Bart", "Lisa"],
+    "personality": ["Silent", "Observant", "Surprisingly Capable"],
+    "episodes": "765+",
+    "quote": "*pacifier suck*",
+    "description": "Margaret Evelyn Simpson is the youngest Simpson who communicates volumes without saying a word.",
+    "color": "#A8E6CF"
+  },
+  "Ned Flanders": {
+    "displayName": "Ned Flanders",
+    "occupation": "Owner, The Leftorium",
+    "family": ["Rod", "Todd"],
+    "personality": ["Devout", "Optimistic", "Neighborly"],
+    "episodes": "400+",
+    "quote": "Okily dokily!",
+    "description": "Nedward Flanders Jr. is Homer's impossibly cheerful neighbor and Springfield's most wholesome citizen.",
+    "color": "#FF8B94"
+  },
+  "Mr Burns": {
+    "displayName": "Mr. Burns",
+    "occupation": "Owner, Springfield Nuclear Power Plant",
+    "family": ["Waylon Smithers"],
+    "personality": ["Ruthless", "Wealthy", "Ancient"],
+    "episodes": "400+",
+    "quote": "Excellent...",
+    "description": "Charles Montgomery Burns is Springfield's oldest and richest resident, eternally plotting to maximize profits.",
+    "color": "#C7CEEA"
+  },
+  "Milhouse": {
+    "displayName": "Milhouse Van Houten",
+    "occupation": "Fourth Grade Student",
+    "family": ["Kirk", "Luann"],
+    "personality": ["Loyal", "Insecure", "Hopeless Romantic"],
+    "episodes": "350+",
+    "quote": "Everything's coming up Milhouse!",
+    "description": "Milhouse Mussolini Van Houten is Bart's best friend and the most unlucky kid in Springfield.",
+    "color": "#95E1D3"
+  }
+}
