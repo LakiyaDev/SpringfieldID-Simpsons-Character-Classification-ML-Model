@@ -1,51 +1,69 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Logo } from "@/components/Logo";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
-type Tab = "classifier" | "history";
+type HomeTab = "classifier" | "history";
 
 interface HeaderProps {
-  activeTab: Tab;
-  onTabChange: (tab: Tab) => void;
+  homeTab?: HomeTab;
+  onHomeTabChange?: (tab: HomeTab) => void;
 }
 
-export function Header({ activeTab, onTabChange }: HeaderProps) {
+function navClass(active: boolean) {
+  return `nav-link pb-1 text-sm font-medium ${active ? "nav-link-active" : "hover:text-springfield-brown"}`;
+}
+
+export function Header({ homeTab = "classifier", onHomeTabChange }: HeaderProps) {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
+  const classifierActive = isHome && homeTab === "classifier";
+  const historyActive = isHome && homeTab === "history";
+  const aboutActive = pathname === "/about";
+  const helpActive = pathname === "/help";
+
   return (
     <header className="glass-header sticky top-0 z-40">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Logo size="lg" />
 
         <nav className="absolute left-1/2 flex -translate-x-1/2 gap-8">
-          <button
-            type="button"
-            onClick={() => onTabChange("classifier")}
-            className={`nav-link pb-1 text-sm font-medium ${
-              activeTab === "classifier" ? "nav-link-active" : "hover:text-springfield-brown"
-            }`}
-          >
-            Classifier
-          </button>
-          <button
-            type="button"
-            onClick={() => onTabChange("history")}
-            className={`nav-link pb-1 text-sm font-medium ${
-              activeTab === "history" ? "nav-link-active" : "hover:text-springfield-brown"
-            }`}
-          >
-            History
-          </button>
-          <Link
-            href="/about"
-            className="nav-link pb-1 text-sm font-medium hover:text-springfield-brown"
-          >
+          {isHome && onHomeTabChange ? (
+            <button
+              type="button"
+              onClick={() => onHomeTabChange("classifier")}
+              className={navClass(classifierActive)}
+            >
+              Classifier
+            </button>
+          ) : (
+            <Link href="/" className={navClass(classifierActive)}>
+              Classifier
+            </Link>
+          )}
+
+          {isHome && onHomeTabChange ? (
+            <button
+              type="button"
+              onClick={() => onHomeTabChange("history")}
+              className={navClass(historyActive)}
+            >
+              History
+            </button>
+          ) : (
+            <Link href="/?tab=history" className={navClass(historyActive)}>
+              History
+            </Link>
+          )}
+
+          <Link href="/about" className={navClass(aboutActive)}>
             About
           </Link>
-          <Link
-            href="/help"
-            className="nav-link pb-1 text-sm font-medium hover:text-springfield-brown"
-          >
+
+          <Link href="/help" className={navClass(helpActive)}>
             Help
           </Link>
         </nav>

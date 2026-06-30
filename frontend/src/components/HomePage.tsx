@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
 import { Header } from "@/components/Header";
@@ -20,6 +21,7 @@ import type { HistoryEntry, PredictionResult } from "@/lib/types";
 type Tab = "classifier" | "history";
 
 export function HomePage() {
+  const searchParams = useSearchParams();
   const [activeTab, setActiveTab] = useState<Tab>("classifier");
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
@@ -32,6 +34,10 @@ export function HomePage() {
   useEffect(() => {
     checkApiHealth().then(({ azureConfigured }) => setAzureReady(azureConfigured));
   }, []);
+
+  useEffect(() => {
+    setActiveTab(searchParams.get("tab") === "history" ? "history" : "classifier");
+  }, [searchParams]);
 
   // Revoke all blob URLs when leaving the page
   useEffect(() => {
@@ -102,7 +108,7 @@ export function HomePage() {
   return (
     <div className="flex min-h-screen flex-col">
       <AnimatedBackground />
-      <Header activeTab={activeTab} onTabChange={setActiveTab} />
+      <Header homeTab={activeTab} onHomeTabChange={setActiveTab} />
 
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-6 lg:px-8">
         {activeTab === "history" ? (
