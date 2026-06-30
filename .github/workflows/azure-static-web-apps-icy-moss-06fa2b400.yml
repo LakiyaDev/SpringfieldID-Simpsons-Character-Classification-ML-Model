@@ -37,6 +37,15 @@ jobs:
         run: |
           npm ci
           npm run build
+          test -f out/index.html
+
+      - name: Stage static site for upload
+        run: |
+          rm -rf swa-deploy
+          cp -r frontend/out swa-deploy
+          cp frontend/public/staticwebapp.config.json swa-deploy/staticwebapp.config.json
+          test -f swa-deploy/index.html
+          ls -la swa-deploy | head -20
 
       - name: Install OIDC Client from Core Package
         run: npm install @actions/core@1.6.0 @actions/http-client
@@ -57,7 +66,7 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ICY_MOSS_06FA2B400 }}
           action: upload
           skip_app_build: true
-          app_location: frontend/out
+          app_location: swa-deploy
           api_location: ""
           output_location: ""
           github_id_token: ${{ steps.idtoken.outputs.result }}

@@ -10,7 +10,8 @@ backend/.env
 # Build
 frontend/.next/
 frontend/out/
-dist/
+frontend/out
+swa-deploy/
 
 # Uploads
 backend/uploads/*
