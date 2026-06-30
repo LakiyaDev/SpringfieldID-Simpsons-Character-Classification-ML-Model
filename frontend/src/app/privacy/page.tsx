@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
 import { InfoPageLayout } from "@/components/InfoPageLayout";
+import { createPageMetadata } from "@/lib/siteMetadata";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy — Springfield ID",
-};
+export const metadata = createPageMetadata(
+  "Privacy Policy",
+  "How Springfield ID handles uploaded images, prediction history, and third-party Azure services."
+);
 
 export default function PrivacyPage() {
   return (

@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { InfoPageLayout } from "@/components/InfoPageLayout";
+import { createPageMetadata } from "@/lib/siteMetadata";
 
-export const metadata: Metadata = {
-  title: "Help — Springfield ID",
-};
+export const metadata = createPageMetadata(
+  "Help",
+  "How to use Springfield ID, tips for better accuracy, and troubleshooting Azure Custom Vision setup."
+);
 
 export default function HelpPage() {
   return (

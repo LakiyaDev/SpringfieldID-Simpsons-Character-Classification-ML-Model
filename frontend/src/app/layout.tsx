@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { rootMetadata } from "@/lib/siteMetadata";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,11 +20,7 @@ const playfair = Playfair_Display({
   weight: ["600", "700"],
 });
 
-export const metadata: Metadata = {
-  title: "Springfield ID — Simpsons Character Classifier",
-  description:
-    "Upload a photo to identify Springfield characters instantly using Azure Custom Vision AI.",
-};
+export const metadata: Metadata = rootMetadata;
 
 const themeScript = `
 (function() {

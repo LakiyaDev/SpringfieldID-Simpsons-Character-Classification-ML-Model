@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Logo } from "@/components/Logo";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 type Tab = "classifier" | "history";
@@ -14,9 +15,7 @@ export function Header({ activeTab, onTabChange }: HeaderProps) {
   return (
     <header className="glass-header sticky top-0 z-40">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="font-serif text-2xl font-bold tracking-tight text-springfield-brown hover:opacity-90">
-          Springfield ID
-        </Link>
+        <Logo size="lg" />
 
         <nav className="absolute left-1/2 flex -translate-x-1/2 gap-8">
           <button

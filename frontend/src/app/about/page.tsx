@@ -1,12 +1,11 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { InfoPageLayout } from "@/components/InfoPageLayout";
+import { createPageMetadata } from "@/lib/siteMetadata";
 
-export const metadata: Metadata = {
-  title: "About — Springfield ID",
-  description:
-    "Learn about the Springfield ID Simpsons character classifier — Azure Custom Vision model, dataset, and performance metrics.",
-};
+export const metadata = createPageMetadata(
+  "About",
+  "Learn about the Springfield ID Simpsons character classifier — Azure Custom Vision model, dataset, and performance metrics."
+);
 
 const MODEL_METRICS = [
   { label: "Precision", value: "95.1%", color: "#8b5cf6", description: "How often predictions are correct" },

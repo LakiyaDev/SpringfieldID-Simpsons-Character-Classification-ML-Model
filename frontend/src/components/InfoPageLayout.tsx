@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
+import { Logo } from "@/components/Logo";
 import { SiteFooter } from "@/components/SiteFooter";
 
 interface InfoPageLayoutProps {
@@ -16,9 +17,7 @@ export function InfoPageLayout({ title, wide, children }: InfoPageLayoutProps) {
 
       <header className="glass-header sticky top-0 z-40">
         <div className={`mx-auto flex ${maxWidth} items-center justify-between px-6 py-4`}>
-          <Link href="/" className="font-serif text-xl font-bold text-springfield-brown hover:opacity-80">
-            Springfield ID
-          </Link>
+          <Logo size="md" />
           <Link
             href="/"
             className="text-sm font-medium text-springfield-blue hover:text-springfield-brown"

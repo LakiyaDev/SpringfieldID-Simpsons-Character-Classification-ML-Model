@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
 import { InfoPageLayout } from "@/components/InfoPageLayout";
+import { createPageMetadata } from "@/lib/siteMetadata";
 
-export const metadata: Metadata = {
-  title: "Terms of Use — Springfield ID",
-};
+export const metadata = createPageMetadata(
+  "Terms of Use",
+  "Terms and acceptable use for the Springfield ID Simpsons character classification app."
+);
 
 export default function TermsPage() {
   return (
