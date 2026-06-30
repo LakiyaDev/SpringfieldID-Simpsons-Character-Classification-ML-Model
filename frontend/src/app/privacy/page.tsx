@@ -8,7 +8,7 @@ export const metadata = createPageMetadata(
 
 export default function PrivacyPage() {
   return (
-    <InfoPageLayout title="Privacy Policy">
+    <InfoPageLayout title="Privacy Policy" contentSize="content">
       <p className="text-[var(--text-primary)]">
         Springfield ID is an educational portfolio project. This policy explains how your data is
         handled when you use the character classifier.

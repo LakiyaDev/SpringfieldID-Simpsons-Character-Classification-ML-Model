@@ -8,7 +8,7 @@ export const metadata = createPageMetadata(
 
 export default function TermsPage() {
   return (
-    <InfoPageLayout title="Terms of Use">
+    <InfoPageLayout title="Terms of Use" contentSize="content">
       <p className="text-[var(--text-primary)]">
         By using Springfield ID, you agree to the following terms. This application is intended for
         educational and portfolio demonstration purposes.
