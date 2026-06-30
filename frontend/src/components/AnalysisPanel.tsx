@@ -123,9 +123,9 @@ export function AnalysisPanel({
             <BoltIcon />
           </div>
           <div>
-            <p className="text-lg font-bold text-[var(--text-primary)]">~0.4s</p>
+            <p className="text-lg font-bold text-[var(--text-primary)]">97.1%</p>
             <p className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-muted)]">
-              Latency
+              Model AP
             </p>
           </div>
         </div>

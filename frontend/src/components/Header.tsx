@@ -38,6 +38,12 @@ export function Header({ activeTab, onTabChange }: HeaderProps) {
             History
           </button>
           <Link
+            href="/about"
+            className="nav-link pb-1 text-sm font-medium hover:text-springfield-brown"
+          >
+            About
+          </Link>
+          <Link
             href="/help"
             className="nav-link pb-1 text-sm font-medium hover:text-springfield-brown"
           >
@@ -45,26 +51,8 @@ export function Header({ activeTab, onTabChange }: HeaderProps) {
           </Link>
         </nav>
 
-        <div className="flex items-center gap-3">
-          <button
-            type="button"
-            aria-label="Profile"
-            className="icon-btn flex h-9 w-9 items-center justify-center rounded-full"
-          >
-            <UserIcon />
-          </button>
-          <ThemeToggle />
-        </div>
+        <ThemeToggle />
       </div>
     </header>
-  );
-}
-
-function UserIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-      <circle cx="12" cy="8" r="4" />
-      <path d="M5 20c0-4 3.5-6 7-6s7 2 7 6" strokeLinecap="round" />
-    </svg>
   );
 }

@@ -8,6 +8,9 @@ export function SiteFooter() {
           Springfield ID
         </Link>
         <nav className="flex gap-6 text-[var(--text-muted)]" aria-label="Legal and help">
+          <Link href="/about" className="transition hover:text-springfield-brown">
+            About
+          </Link>
           <Link href="/privacy" className="transition hover:text-springfield-brown">
             Privacy
           </Link>

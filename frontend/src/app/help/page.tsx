@@ -82,7 +82,8 @@ export default function HelpPage() {
       <section>
         <h2 className="mb-2 text-base font-semibold text-[var(--text-primary)]">More information</h2>
         <p>
-          See our <Link href="/privacy" className="text-springfield-blue hover:underline">Privacy Policy</Link>{" "}
+          See our <Link href="/about" className="text-springfield-blue hover:underline">About</Link> page,{" "}
+          <Link href="/privacy" className="text-springfield-blue hover:underline">Privacy Policy</Link>{" "}
           and <Link href="/terms" className="text-springfield-blue hover:underline">Terms of Use</Link> for
           additional details.
         </p>

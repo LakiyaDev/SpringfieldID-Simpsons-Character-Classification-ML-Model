@@ -4,16 +4,18 @@ import { SiteFooter } from "@/components/SiteFooter";
 
 interface InfoPageLayoutProps {
   title: string;
+  wide?: boolean;
   children: React.ReactNode;
 }
 
-export function InfoPageLayout({ title, children }: InfoPageLayoutProps) {
+export function InfoPageLayout({ title, wide, children }: InfoPageLayoutProps) {
+  const maxWidth = wide ? "max-w-5xl" : "max-w-3xl";
   return (
     <div className="flex min-h-screen flex-col">
       <AnimatedBackground />
 
       <header className="glass-header sticky top-0 z-40">
-        <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
+        <div className={`mx-auto flex ${maxWidth} items-center justify-between px-6 py-4`}>
           <Link href="/" className="font-serif text-xl font-bold text-springfield-brown hover:opacity-80">
             Springfield ID
           </Link>
@@ -26,7 +28,7 @@ export function InfoPageLayout({ title, children }: InfoPageLayoutProps) {
         </div>
       </header>
 
-      <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-8 sm:px-6">
+      <main className={`mx-auto w-full ${maxWidth} flex-1 px-4 py-8 sm:px-6`}>
         <article className="glass-panel rounded-3xl p-8 md:p-10">
           <h1 className="font-serif text-3xl font-bold text-[var(--text-primary)]">{title}</h1>
           <div className="prose-info mt-6 space-y-4 text-sm leading-relaxed text-[var(--text-muted)]">
